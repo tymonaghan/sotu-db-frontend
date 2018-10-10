@@ -1,9 +1,20 @@
 import React from "react";
-import { StyleSheet, Text, View, TextInput, Button } from "react-native";
+import { StyleSheet, Text, View, TextInput, Button, Alert } from "react-native";
 import Title from "./Title.js";
-import SearchBar from "./Title.js";
+//import SearchBar from "./Title.js";
+
+let searchString = "hi";
 
 export default class App extends React.Component {
+  _onPressButton() {
+    this._setSearchString;
+    Alert.alert("you pressed the button" + searchString);
+  }
+
+  _setSearchString() {
+    let searchString = this.setState("yo");
+  }
+
   render() {
     return (
       <React.Fragment>
@@ -19,7 +30,7 @@ export default class App extends React.Component {
           />
         </View>
         <View style={styles.buttonContainer}>
-          <Button onPress={() => {}} title="Search!" />
+          <Button onPress={this._onPressButton} title="Search!" />
         </View>
       </React.Fragment>
     );
